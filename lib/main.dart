@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
     ]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Codeforces Visualizer',
+      title: 'Success Graphify',
       theme: ThemeData(
         primaryColor: kPrimaryColor,
         textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),

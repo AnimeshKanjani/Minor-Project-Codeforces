@@ -17,7 +17,7 @@ class MyDrawer extends StatelessWidget {
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
                 accountName: Text(
-                  "Codeforces",
+                  "Success",
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -25,7 +25,7 @@ class MyDrawer extends StatelessWidget {
                       fontFamily: GoogleFonts.mateSc().fontFamily),
                 ),
                 accountEmail: Text(
-                  "Visualizer",
+                  "Graphify",
                   style: TextStyle(
                       fontSize: 17,
                       fontWeight: FontWeight.bold,
