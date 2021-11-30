@@ -9,12 +9,15 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: kPrimaryColor,
+        color: Color(0xff7267CB),
         child: ListView(
           children: [
             DrawerHeader(
               padding: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
+                decoration: BoxDecoration(
+                  color: const Color(0xff7267CB),
+                ),
                 margin: EdgeInsets.zero,
                 accountName: Text(
                   "Success",

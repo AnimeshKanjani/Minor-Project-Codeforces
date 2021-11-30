@@ -1,5 +1,8 @@
 import 'package:codeforces_visualizer/components/uiElements.dart';
+import 'package:codeforces_visualizer/screens/compare_users.dart';
 import 'package:codeforces_visualizer/screens/drawer.dart';
+import 'package:codeforces_visualizer/screens/last_10_contests.dart';
+import 'package:codeforces_visualizer/screens/single_user.dart';
 import 'package:codeforces_visualizer/utilities/constants.dart';
 import 'package:codeforces_visualizer/utilities/routes.dart';
 import 'package:flutter/cupertino.dart';
@@ -8,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'components/appbar.dart';
+import 'screens/singleUserDetailsPage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,16 +20,58 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _currentIndex = 1;
+  final List<Widget> _children = [
+    Last10ContestsAnalysis(),
+    SingleUserInputPage(),
+    CompareUsersInputPage(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: MyDrawer(),
-      appBar: buildAppBar(),
       backgroundColor: kTextColor,
-      body: SingleChildScrollView(
-        child: Body(),
+      body: _children[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Color(0xff98BAE7),
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: Color(0xff000000),
+        showUnselectedLabels: false,
+        currentIndex: _currentIndex,
+        items: [
+          _bottomNavItem(Icons.access_time, "Last Contests"),
+          _bottomNavItem(Icons.search, "Analyse User"),
+          _bottomNavItem(Icons.group_outlined, "Compare User"),
+        ],
+        onTap: onTabTapped,
       ),
     );
+  }
+
+  _bottomNavItem(IconData icon, String title) {
+    return BottomNavigationBarItem(
+      icon: Icon(
+        icon,
+        color: Colors.black,
+      ),
+      activeIcon: Icon(
+        icon,
+        color: Color(0xff48267b),
+      ),
+      title: new Text(
+        title,
+        style: TextStyle(
+          color: Color(0xff48267b),
+        ),
+      ),
+    );
+  }
+
+  void onTabTapped(int index) {
+    if (!mounted) return;
+    setState(() {
+      _currentIndex = index;
+    });
   }
 }
 
@@ -79,16 +125,16 @@ class _BodyState extends State<Body> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                homePageButton("  Single User", () {
-                  Navigator.pushNamed(context, MyRoute.singleUserInputPage);
+                homePageButton("Last 10 Contests", () {
+                  Navigator.pushNamed(context, MyRoute.last10Contests);
                 }, Icons.bar_chart),
                 SizedBox(height: 40),
-                homePageButton("  Compare Users", () {
+                homePageButton("Compare Users", () {
                   Navigator.pushNamed(context, MyRoute.compareUsersInputPage);
                 }, Icons.stacked_line_chart_sharp),
                 SizedBox(height: 40),
-                homePageButton("  Last 10 Contests", () {
-                  Navigator.pushNamed(context, MyRoute.last10Contests);
+                homePageButton("Single User", () {
+                  Navigator.pushNamed(context, MyRoute.singleUserInputPage);
                 }, Icons.pie_chart),
               ],
             ),

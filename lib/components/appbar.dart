@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 AppBar buildAppBar() {
   return AppBar(
     elevation: 0.0,
+    backgroundColor: Color(0xff6e3cbc),
     leading: Builder(
       builder: (BuildContext context) {
         return IconButton(
