@@ -1,4 +1,3 @@
-import 'package:codeforces_visualizer/utilities/constants.dart';
 import 'package:codeforces_visualizer/utilities/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -55,48 +54,60 @@ class MyDrawer extends StatelessWidget {
                 style: TextStyle(color: Colors.white),
               ),
             ),
-            ListTile(
-              onTap: () {
-                Navigator.pushNamed(context, MyRoute.singleUserInputPage);
-              },
+
+            const ExpansionTile(
+              collapsedIconColor: Colors.white,
+              iconColor: Colors.white,
               leading: Icon(
                 CupertinoIcons.profile_circled,
                 color: Colors.white,
               ),
               title: Text(
-                "Single User",
+                'About Us',
                 textScaleFactor: 1.2,
                 style: TextStyle(color: Colors.white),
               ),
+              children: <Widget>[
+                ListTile(
+                    title: Text(
+                  'We are a group of 3 Computer Enthusiats who are built this app to help the competitive community out there. This app was possible with the support by the teachers at out colllege JIIT',
+                  textScaleFactor: 1.2,
+                  style: TextStyle(color: Colors.white),
+                )),
+              ],
             ),
-            ListTile(
-              onTap: () {
-                Navigator.pushNamed(context, MyRoute.compareUsersInputPage);
-              },
-              leading: Icon(
-                Icons.stacked_line_chart_rounded,
+
+            /*    leading: Icon(
+                CupertinoIcons.profile_circled,
                 color: Colors.white,
               ),
               title: Text(
-                "Compare Users",
+                "About Us",
                 textScaleFactor: 1.2,
                 style: TextStyle(color: Colors.white),
-              ),
-            ),
-            ListTile(
-              onTap: () {
-                Navigator.pushNamed(context, MyRoute.last10Contests);
-              },
+              ),*/
+            // ),
+            const ExpansionTile(
+              collapsedIconColor: Colors.white,
+              iconColor: Colors.white,
               leading: Icon(
-                Icons.pie_chart_rounded,
+                Icons.email,
                 color: Colors.white,
               ),
               title: Text(
-                "Last 10 Contests",
+                "Contact Us",
                 textScaleFactor: 1.2,
                 style: TextStyle(color: Colors.white),
               ),
-            )
+              children: <Widget>[
+                ListTile(
+                    title: Text(
+                  'Email-19103041@mail.jiit.ac.in',
+                  textScaleFactor: 1.2,
+                  style: TextStyle(color: Colors.white),
+                )),
+              ],
+            ),
           ],
         ),
       ),

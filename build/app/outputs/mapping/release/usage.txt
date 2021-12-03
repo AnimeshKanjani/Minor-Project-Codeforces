@@ -2182,8 +2182,8 @@ androidx.loader.app.LoaderManagerImpl
 androidx.loader.app.LoaderManager
 kotlin.text.CharDirectionality$Companion$directionalityMap$2
 com.google.common.collect.Collections2
-androidx.core.provider.SelfDestructiveThread$2
 androidx.fragment.app.FragmentTransition$4
+androidx.core.provider.SelfDestructiveThread$2
 androidx.loader.R$integer
 androidx.core.graphics.TypefaceCompatApi26Impl
 androidx.core.view.DragStartHelper$2
@@ -2511,8 +2511,8 @@ androidx.core.text.PrecomputedTextCompat
 com.google.common.primitives.ImmutableLongArray$1
 kotlin.text.Regex$findAll$1
 kotlin.contracts.Returns
-com.google.common.base.CaseFormat$4
 com.google.common.annotations.VisibleForTesting
+com.google.common.base.CaseFormat$4
 com.google.common.collect.AbstractBiMap$EntrySet
 io.flutter.Log:
     public void <init>()
@@ -3376,8 +3376,8 @@ androidx.core.util.Pools$SynchronizedPool
 kotlin.jvm.functions.Function15
 com.google.common.collect.StandardTable$Column$EntrySetIterator
 com.google.common.util.concurrent.AggregateFutureState$SafeAtomicHelper
-androidx.core.app.ShareCompat
 androidx.core.content.SharedPreferencesCompat$EditorCompat
+androidx.core.app.ShareCompat
 com.google.common.escape.UnicodeEscaper
 com.google.common.collect.ForwardingNavigableMap
 com.google.common.io.FileWriteMode
